@@ -75,7 +75,7 @@ _ThinkMatch_ currently contains pytorch source code of the following deep graph 
 * [**LinSAT**](/models/LinSAT)
   * Runzhong Wang, Yunhao Zhang, Ziao Guo, Tianyi Chen, Xiaokang Yang, Junchi Yan. "LinSATNet: The Positive Linear Satisfiability Neural Networks." _ICML 2023_. 
     [[paper]](https://openreview.net/forum?id=D2Oaj7v9YJ)
-* [**COMMON**](/models/COMMON) & [**COMMON$+$**](/models/COMMONPLUS)
+* [**COMMON**](/models/COMMON) & [**COMMON+**](/models/COMMONPLUS)
   * Yijie Lin, Mouxing Yang, Jun Yu, Peng Hu, Changqing Zhang, Xi Peng. "Graph Matching with Bi-level Noisy
   Correspondence." _ICCV 2023_. 
     [[paper]](https://arxiv.org/pdf/2212.04085.pdf), [[project page]](https://github.com/Lin-Yijie/Graph-Matching-Networks/tree/main/COMMON)
