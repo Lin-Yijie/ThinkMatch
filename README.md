@@ -3,7 +3,6 @@
 [![release](https://img.shields.io/github/v/release/Thinklab-SJTU/ThinkMatch)](https://github.com/Thinklab-SJTU/ThinkMatch/releases)
 [![Documentation Status](https://readthedocs.org/projects/thinkmatch/badge/?version=latest)](https://thinkmatch.readthedocs.io/en/latest/?badge=latest)
 [![docker](https://img.shields.io/badge/docker-images-orange)](https://hub.docker.com/r/runzhongwang/thinkmatch/tags)
-[![Docker Pulls](https://img.shields.io/docker/pulls/runzhongwang/thinkmatch)](https://hub.docker.com/r/runzhongwang/thinkmatch/tags)
 [![discord channel](https://img.shields.io/discord/1028701206526304317.svg?&color=blueviolet&label=discord)](https://discord.gg/8m6n7rRz9T)
 [![QQ group](https://img.shields.io/badge/QQ%20group-696401889-blue)](https://qm.qq.com/cgi-bin/qm/qr?k=QolXYJn_M5ilDEM9e2jEjlPnJ02Ktabd&jump_from=webapi&authKey=6zG6D/Js4YF5h5zj778aO5MDKOXBwPFi8gQ4LsXJN8Hn1V8uCVGV81iT4J/FjPGT)
 [![GitHub stars](https://img.shields.io/github/stars/Thinklab-SJTU/ThinkMatch.svg?style=social&label=Star&maxAge=8640)](https://GitHub.com/Thinklab-SJTU/ThinkMatch/stargazers/) 
@@ -76,10 +75,12 @@ _ThinkMatch_ currently contains pytorch source code of the following deep graph 
 * [**LinSAT**](/models/LinSAT)
   * Runzhong Wang, Yunhao Zhang, Ziao Guo, Tianyi Chen, Xiaokang Yang, Junchi Yan. "LinSATNet: The Positive Linear Satisfiability Neural Networks." _ICML 2023_. 
     [[paper]](https://openreview.net/forum?id=D2Oaj7v9YJ)
-* [**COMMON**](/models/COMMON)
+* [**COMMON**](/models/COMMON) & [**COMMON$+$**](/models/COMMONPLUS)
   * Yijie Lin, Mouxing Yang, Jun Yu, Peng Hu, Changqing Zhang, Xi Peng. "Graph Matching with Bi-level Noisy
   Correspondence." _ICCV 2023_. 
     [[paper]](https://arxiv.org/pdf/2212.04085.pdf), [[project page]](https://github.com/Lin-Yijie/Graph-Matching-Networks/tree/main/COMMON)
+  * Yijie Lin, Mouxing Yang, Peng Hu, Jiancheng Lv, Hao Chen, Xi Peng. "Learning with Partial and Noisy Correspondence in Graph Matching". TPAMI, 2026. 
+    [[paper]](https://xlearning-lab.com/assets/2026-TPAMI-Learning-With-Partial-and-Noisy-Correspondence-in-Graph-Matching.pdf)
 
 ## When to use ThinkMatch
 
@@ -113,37 +114,39 @@ Source code: https://github.com/Thinklab-SJTU/pygmtools
 
 ### PascalVOC - 2GM
 
-| model                                                        | year | aero   | bike   | bird   | boat   | bottle | bus    | car    | cat    | chair  | cow    | table  | dog    | horse  | mbkie  | person | plant  | sheep  | sofa   | train  | tv     | mean   |
-| ------------------------------------------------------------ | ---- | ------ | ------ | ------ | ------ | ------ | ------ | ------ | ------ | ------ | ------ | ------ | ------ | ------ | ------ | ------ | ------ | ------ | ------ | ------ | ------ | ------ |
-| [GMN](https://thinkmatch.readthedocs.io/en/latest/guide/models.html#gmn) | 2018 | 0.4163 | 0.5964 | 0.6027 | 0.4795 | 0.7918 | 0.7020 | 0.6735 | 0.6488 | 0.3924 | 0.6128 | 0.6693 | 0.5976 | 0.6106 | 0.5975 | 0.3721 | 0.7818 | 0.6800 | 0.4993 | 0.8421 | 0.9141 | 0.6240 |
-| [PCA-GM](https://thinkmatch.readthedocs.io/en/latest/guide/models.html#pca-gm) | 2019 | 0.4979 | 0.6193 | 0.6531 | 0.5715 | 0.7882 | 0.7556 | 0.6466 | 0.6969 | 0.4164 | 0.6339 | 0.5073 | 0.6705 | 0.6671 | 0.6164 | 0.4447 | 0.8116 | 0.6782 | 0.5922 | 0.7845 | 0.9042 | 0.6478 |
-| [NGM](https://thinkmatch.readthedocs.io/en/latest/guide/models.html#ngm) | 2019 | 0.5010 | 0.6350 | 0.5790 | 0.5340 | 0.7980 | 0.7710 | 0.7360 | 0.6820 | 0.4110 | 0.6640 | 0.4080 | 0.6030 | 0.6190 | 0.6350 | 0.4560 | 0.7710 | 0.6930 | 0.6550 | 0.7920 | 0.8820 | 0.6413 |
-| [NHGM](https://thinkmatch.readthedocs.io/en/latest/guide/models.html#ngm) | 2019 | 0.5240 | 0.6220 | 0.5830 | 0.5570 | 0.7870 | 0.7770 | 0.7440 | 0.7070 | 0.4200 | 0.6460 | 0.5380 | 0.6100 | 0.6190 | 0.6080 | 0.4680 | 0.7910 | 0.6680 | 0.5510 | 0.8090 | 0.8870 | 0.6458 |
-| [IPCA-GM](https://thinkmatch.readthedocs.io/en/latest/guide/models.html#pca-gm) | 2020 | 0.5378 | 0.6622 | 0.6714 | 0.6120 | 0.8039 | 0.7527 | 0.7255 | 0.7252 | 0.4455 | 0.6524 | 0.5430 | 0.6724 | 0.6790 | 0.6421 | 0.4793 | 0.8435 | 0.7079 | 0.6398 | 0.8380 | 0.9083 | 0.6770 |
-| [CIE-H](https://thinkmatch.readthedocs.io/en/latest/guide/models.html#cie-h) | 2020 | 0.5250 | 0.6858 | 0.7015 | 0.5706 | 0.8207 | 0.7700 | 0.7073 | 0.7313 | 0.4383 | 0.6994 | 0.6237 | 0.7018 | 0.7031 | 0.6641 | 0.4763 | 0.8525 | 0.7172 | 0.6400 | 0.8385 | 0.9168 | 0.6892 |
-| [BBGM](https://thinkmatch.readthedocs.io/en/latest/guide/models.html#bbgm) | 2020 | 0.6187 | 0.7106 | 0.7969 | 0.7896 | 0.8740 | 0.9401 | 0.8947 | 0.8022 | 0.5676 | 0.7914 | 0.6458 | 0.7892 | 0.7615 | 0.7512 | 0.6519 | 0.9818 | 0.7729 | 0.7701 | 0.9494 | 0.9393 | 0.7899 |
-| [NGM-v2](https://thinkmatch.readthedocs.io/en/latest/guide/models.html#ngm) | 2021 | 0.6184 | 0.7118 | 0.7762 | 0.7875 | 0.8733 | 0.9363 | 0.8770 | 0.7977 | 0.5535 | 0.7781 | 0.8952 | 0.7880 | 0.8011 | 0.7923 | 0.6258 | 0.9771 | 0.7769 | 0.7574 | 0.9665 | 0.9323 | 0.8011 |
-| [NHGM-v2](https://thinkmatch.readthedocs.io/en/latest/guide/models.html#ngm) | 2021 | 0.5995 | 0.7154 | 0.7724 | 0.7902 | 0.8773 | 0.9457 | 0.8903 | 0.8181 | 0.5995 | 0.8129 | 0.8695 | 0.7811 | 0.7645 | 0.7750 | 0.6440 | 0.9872 | 0.7778 | 0.7538 | 0.9787 | 0.9280 | 0.8040 |
-| [COMMON](https://arxiv.org/pdf/2212.04085.pdf) | 2023 | 0.6560 | 0.7520 | 0.8080 | 0.7950    |0.8930 | 0.9230 | 0.9010 | 0.8180 | 0.6160 | 0.8070| 0.9500 | 0.8200 |    0.8160    | 0.7950 | 0.6660 |    0.9890 | 0.7890 | 0.8090 | 0.9930 |    0.9380 | 0.8270 |  
+| model                                                                                                                          | year | aero   | bike   | bird   | boat   | bottle | bus    | car    | cat    | chair  | cow    | table  | dog    | horse  | mbkie  | person | plant  | sheep  | sofa   | train  | tv     | mean   |
+|--------------------------------------------------------------------------------------------------------------------------------| ---- | ------ | ------ | ------ | ------ | ------ | ------ | ------ | ------ | ------ | ------ | ------ | ------ | ------ | ------ | ------ | ------ | ------ | ------ | ------ | ------ | ------ |
+| [GMN](https://thinkmatch.readthedocs.io/en/latest/guide/models.html#gmn)                                                       | 2018 | 0.4163 | 0.5964 | 0.6027 | 0.4795 | 0.7918 | 0.7020 | 0.6735 | 0.6488 | 0.3924 | 0.6128 | 0.6693 | 0.5976 | 0.6106 | 0.5975 | 0.3721 | 0.7818 | 0.6800 | 0.4993 | 0.8421 | 0.9141 | 0.6240 |
+| [PCA-GM](https://thinkmatch.readthedocs.io/en/latest/guide/models.html#pca-gm)                                                 | 2019 | 0.4979 | 0.6193 | 0.6531 | 0.5715 | 0.7882 | 0.7556 | 0.6466 | 0.6969 | 0.4164 | 0.6339 | 0.5073 | 0.6705 | 0.6671 | 0.6164 | 0.4447 | 0.8116 | 0.6782 | 0.5922 | 0.7845 | 0.9042 | 0.6478 |
+| [NGM](https://thinkmatch.readthedocs.io/en/latest/guide/models.html#ngm)                                                       | 2019 | 0.5010 | 0.6350 | 0.5790 | 0.5340 | 0.7980 | 0.7710 | 0.7360 | 0.6820 | 0.4110 | 0.6640 | 0.4080 | 0.6030 | 0.6190 | 0.6350 | 0.4560 | 0.7710 | 0.6930 | 0.6550 | 0.7920 | 0.8820 | 0.6413 |
+| [NHGM](https://thinkmatch.readthedocs.io/en/latest/guide/models.html#ngm)                                                      | 2019 | 0.5240 | 0.6220 | 0.5830 | 0.5570 | 0.7870 | 0.7770 | 0.7440 | 0.7070 | 0.4200 | 0.6460 | 0.5380 | 0.6100 | 0.6190 | 0.6080 | 0.4680 | 0.7910 | 0.6680 | 0.5510 | 0.8090 | 0.8870 | 0.6458 |
+| [IPCA-GM](https://thinkmatch.readthedocs.io/en/latest/guide/models.html#pca-gm)                                                | 2020 | 0.5378 | 0.6622 | 0.6714 | 0.6120 | 0.8039 | 0.7527 | 0.7255 | 0.7252 | 0.4455 | 0.6524 | 0.5430 | 0.6724 | 0.6790 | 0.6421 | 0.4793 | 0.8435 | 0.7079 | 0.6398 | 0.8380 | 0.9083 | 0.6770 |
+| [CIE-H](https://thinkmatch.readthedocs.io/en/latest/guide/models.html#cie-h)                                                   | 2020 | 0.5250 | 0.6858 | 0.7015 | 0.5706 | 0.8207 | 0.7700 | 0.7073 | 0.7313 | 0.4383 | 0.6994 | 0.6237 | 0.7018 | 0.7031 | 0.6641 | 0.4763 | 0.8525 | 0.7172 | 0.6400 | 0.8385 | 0.9168 | 0.6892 |
+| [BBGM](https://thinkmatch.readthedocs.io/en/latest/guide/models.html#bbgm)                                                     | 2020 | 0.6187 | 0.7106 | 0.7969 | 0.7896 | 0.8740 | 0.9401 | 0.8947 | 0.8022 | 0.5676 | 0.7914 | 0.6458 | 0.7892 | 0.7615 | 0.7512 | 0.6519 | 0.9818 | 0.7729 | 0.7701 | 0.9494 | 0.9393 | 0.7899 |
+| [NGM-v2](https://thinkmatch.readthedocs.io/en/latest/guide/models.html#ngm)                                                    | 2021 | 0.6184 | 0.7118 | 0.7762 | 0.7875 | 0.8733 | 0.9363 | 0.8770 | 0.7977 | 0.5535 | 0.7781 | 0.8952 | 0.7880 | 0.8011 | 0.7923 | 0.6258 | 0.9771 | 0.7769 | 0.7574 | 0.9665 | 0.9323 | 0.8011 |
+| [NHGM-v2](https://thinkmatch.readthedocs.io/en/latest/guide/models.html#ngm)                                                   | 2021 | 0.5995 | 0.7154 | 0.7724 | 0.7902 | 0.8773 | 0.9457 | 0.8903 | 0.8181 | 0.5995 | 0.8129 | 0.8695 | 0.7811 | 0.7645 | 0.7750 | 0.6440 | 0.9872 | 0.7778 | 0.7538 | 0.9787 | 0.9280 | 0.8040 |
+| [COMMON](https://arxiv.org/pdf/2212.04085.pdf)                                                                                 | 2023 | 0.6560 | 0.7520 | 0.8080 | 0.7950    |0.8930 | 0.9230 | 0.9010 | 0.8180 | 0.6160 | 0.8070| 0.9500 | 0.8200 |    0.8160    | 0.7950 | 0.6660 |    0.9890 | 0.7890 | 0.8090 | 0.9930 |    0.9380 | 0.8270 |  
+| [COMMON$^+$](https://xlearning-lab.com/assets/2026-TPAMI-Learning-With-Partial-and-Noisy-Correspondence-in-Graph-Matching.pdf) | 2026 | 0.6880 | 0.7550 | 0.8260 | 0.7740 | 0.9000 | 0.9220 | 0.8950 | 0.8070 | 0.6180 | 0.8240 | 0.9530 | 0.8050 | 0.8210 | 0.8160 | 0.6770 | 0.9880 | 0.7990 | 0.8100 | 0.9850 | 0.9540 | 0.8310 |
+
 
 ### Willow Object Class - 2GM & MGM
 
-| model                                                        | year | remark          | Car    | Duck   | Face   | Motorbike | Winebottle | mean   |
-| ------------------------------------------------------------ | ---- | --------------- | ------ | ------ | ------ | --------- | ---------- | ------ |
-| [GMN](https://thinkmatch.readthedocs.io/en/latest/guide/models.html#gmn) | 2018 | -               | 0.6790 | 0.7670 | 0.9980 | 0.6920    | 0.8310     | 0.7934 |
-| [PCA-GM](https://thinkmatch.readthedocs.io/en/latest/guide/models.html#pca-gm) | 2019 | -               | 0.8760 | 0.8360 | 1.0000 | 0.7760    | 0.8840     | 0.8744 |
-| [NGM](https://thinkmatch.readthedocs.io/en/latest/guide/models.html#ngm) | 2019 | -               | 0.8420 | 0.7760 | 0.9940 | 0.7680    | 0.8830     | 0.8530 |
-| [NHGM](https://thinkmatch.readthedocs.io/en/latest/guide/models.html#ngm) | 2019 | -               | 0.8650 | 0.7220 | 0.9990 | 0.7930    | 0.8940     | 0.8550 |
-| [NMGM](https://thinkmatch.readthedocs.io/en/latest/guide/models.html#ngm) | 2019 | -               | 0.7850 | 0.9210 | 1.0000 | 0.7870    | 0.9480     | 0.8880 |
-| [IPCA-GM](https://thinkmatch.readthedocs.io/en/latest/guide/models.html#pca) | 2020 | -               | 0.9040 | 0.8860 | 1.0000 | 0.8300    | 0.8830     | 0.9006 |
-| [CIE-H](https://thinkmatch.readthedocs.io/en/latest/guide/models.html#cie-h) | 2020 | -               | 0.8581 | 0.8206 | 0.9994 | 0.8836    | 0.8871     | 0.8898 |
-| [BBGM](https://thinkmatch.readthedocs.io/en/latest/guide/models.html#bbgm) | 2020 | -               | 0.9680 | 0.8990 | 1.0000 | 0.9980    | 0.9940     | 0.9718 |
-| [GANN-MGM](https://thinkmatch.readthedocs.io/en/latest/guide/models.html#gann) | 2020 | self-supervised | 0.9600 | 0.9642 | 1.0000 | 1.0000    | 0.9879     | 0.9906 |
-| [NGM-v2](https://thinkmatch.readthedocs.io/en/latest/guide/models.html#ngm) | 2021 | -               | 0.9740 | 0.9340 | 1.0000 | 0.9860    | 0.9830     | 0.9754 |
-| [NHGM-v2](https://thinkmatch.readthedocs.io/en/latest/guide/models.html#ngm) | 2021 | -               | 0.9740 | 0.9390 | 1.0000 | 0.9860    | 0.9890     | 0.9780 |
-| [NMGM-v2](https://thinkmatch.readthedocs.io/en/latest/guide/models.html#ngm) | 2021 | -               | 0.9760 | 0.9447 | 1.0000 | 1.0000    | 0.9902     | 0.9822 |
-| [COMMON](https://arxiv.org/pdf/2212.04085.pdf) | 2023 | -             | 0.9760 | 0.9820 | 1.0000 | 1.0000 | 0.9960     | 0.9910 |
-
+| model                                                        | year  | remark         | Car    | Duck   | Face   | Motorbike | Winebottle | mean   |
+| ------------------------------------------------------------ |-------| -------------- | ------ | ------ | ------ | --------- | ---------- | ------ |
+| [GMN](https://thinkmatch.readthedocs.io/en/latest/guide/models.html#gmn) | 2018  | -              | 0.6790 | 0.7670 | 0.9980 | 0.6920    | 0.8310     | 0.7934 |
+| [PCA-GM](https://thinkmatch.readthedocs.io/en/latest/guide/models.html#pca-gm) | 2019  | -              | 0.8760 | 0.8360 | 1.0000 | 0.7760    | 0.8840     | 0.8744 |
+| [NGM](https://thinkmatch.readthedocs.io/en/latest/guide/models.html#ngm) | 2019  | -              | 0.8420 | 0.7760 | 0.9940 | 0.7680    | 0.8830     | 0.8530 |
+| [NHGM](https://thinkmatch.readthedocs.io/en/latest/guide/models.html#ngm) | 2019  | -              | 0.8650 | 0.7220 | 0.9990 | 0.7930    | 0.8940     | 0.8550 |
+| [NMGM](https://thinkmatch.readthedocs.io/en/latest/guide/models.html#ngm) | 2019  | -              | 0.7850 | 0.9210 | 1.0000 | 0.7870    | 0.9480     | 0.8880 |
+| [IPCA-GM](https://thinkmatch.readthedocs.io/en/latest/guide/models.html#pca) | 2020  | -              | 0.9040 | 0.8860 | 1.0000 | 0.8300    | 0.8830     | 0.9006 |
+| [CIE-H](https://thinkmatch.readthedocs.io/en/latest/guide/models.html#cie-h) | 2020  | -              | 0.8581 | 0.8206 | 0.9994 | 0.8836    | 0.8871     | 0.8898 |
+| [BBGM](https://thinkmatch.readthedocs.io/en/latest/guide/models.html#bbgm) | 2020  | -              | 0.9680 | 0.8990 | 1.0000 | 0.9980    | 0.9940     | 0.9718 |
+| [GANN-MGM](https://thinkmatch.readthedocs.io/en/latest/guide/models.html#gann) | 2020  | self-supervised | 0.9600 | 0.9642 | 1.0000 | 1.0000    | 0.9879     | 0.9906 |
+| [NGM-v2](https://thinkmatch.readthedocs.io/en/latest/guide/models.html#ngm) | 2021  | -              | 0.9740 | 0.9340 | 1.0000 | 0.9860    | 0.9830     | 0.9754 |
+| [NHGM-v2](https://thinkmatch.readthedocs.io/en/latest/guide/models.html#ngm) | 2021  | -              | 0.9740 | 0.9390 | 1.0000 | 0.9860    | 0.9890     | 0.9780 |
+| [NMGM-v2](https://thinkmatch.readthedocs.io/en/latest/guide/models.html#ngm) | 2021  | -              | 0.9760 | 0.9447 | 1.0000 | 1.0000    | 0.9902     | 0.9822 |
+| [COMMON](https://arxiv.org/pdf/2212.04085.pdf) | 2023  | -            | 0.9760 | 0.9820 | 1.0000 | 1.0000 | 0.9960     | 0.9910 |
+| [COMMON$^+$](https://xlearning-lab.com/assets/2026-TPAMI-Learning-With-Partial-and-Noisy-Correspondence-in-Graph-Matching.pdf) | 2026  | -             | 0.9830 | 0.9820 | 1.0000 | 1.0000 | 1.0000 | 0.9930 |
 ### SPair-71k - 2GM
 
 | model                                                        | year | aero   | bike   | bird   | boat   | bottle | bus    | car    | cat    | chair  | cow    | dog    | horse  | mtbike | person | plant  | sheep  | train  | tv     | mean   |
@@ -157,6 +160,8 @@ Source code: https://github.com/Thinklab-SJTU/pygmtools
 | [NGM-v2](https://thinkmatch.readthedocs.io/en/latest/guide/models.html#ngm) | 2021 | 0.6877 | 0.6331 | 0.8677 | 0.7013 | 0.6971 | 0.9467 | 0.8740 | 0.7737 | 0.7205 | 0.8067 | 0.7426 | 0.7253 | 0.7946 | 0.7340 | 0.9888 | 0.8123 | 0.9426 | 0.9867 | 0.8020 |
 | [NHGM-v2](https://thinkmatch.readthedocs.io/en/latest/guide/models.html#ngm) | 2021 | 0.6202 | 0.5781 | 0.8642 | 0.6846 | 0.6872 | 0.9335 | 0.8081 | 0.7656 | 0.6919 | 0.7987 | 0.6623 | 0.7171 | 0.7812 | 0.6953 | 0.9824 | 0.8444 | 0.9316 | 0.9926 | 0.7799 |
 | [COMMON](https://arxiv.org/pdf/2212.04085.pdf)    | 2023 | 0.7730 | 0.6820 | 0.9200 | 0.7950 | 0.7040 | 0.9750 | 0.9160 | 0.8250 | 0.7220 | 0.8800 | 0.8000| 0.7410 | 0.8340 | 0.8280 | 0.9990 | 0.8440 | 0.9820 | 0.9980| 0.8450 |
+| [COMMON$^+$](https://xlearning-lab.com/assets/2026-TPAMI-Learning-With-Partial-and-Noisy-Correspondence-in-Graph-Matching.pdf)  | 2026 | 0.7980 | 0.7230 | 0.9170 | 0.7870 | 0.7080 | 0.9800 | 0.9180 | 0.8190 | 0.7280 | 0.8820 | 0.8330 | 0.7640 | 0.8340 | 0.8390 | 0.9990 | 0.8610 | 0.9920 | 0.9990 | 0.8550 |
+
 
 _ThinkMatch_ includes the flowing datasets with the provided benchmarks:
 
@@ -180,7 +185,7 @@ _ThinkMatch_ also supports the following graph matching settings:
 
 Get the recommended docker image by
 ```bash
-docker pull runzhongwang/thinkmatch:torch1.6.0-cuda10.1-cudnn7-pyg1.6.3-pygmtools0.5.1
+docker pull runzhongwang/thinkmatch:torch1.6.0-cuda10.1-cudnn7-pyg1.6.3-pygmtools0.3.2
 ```
 
 Other combinations of torch and cuda are also available. See available images at [docker hub](https://hub.docker.com/r/runzhongwang/thinkmatch/tags).
@@ -269,7 +274,7 @@ Note: All following datasets can be automatically downloaded and unzipped by `py
     ```
 1. Willow-Object-Class
    
-    1. Download Willow-ObjectClass dataset from [the official site](http://www.di.ens.fr/willow/research/graphlearning/WILLOW-ObjectClass_dataset.zip) or [hugging face](https://huggingface.co/heatingma/pygmtools/resolve/main/WILLOW-ObjectClass_dataset.zip)
+    1. Download [Willow-ObjectClass dataset](http://www.di.ens.fr/willow/research/graphlearning/WILLOW-ObjectClass_dataset.zip)
     
     1. Unzip the dataset and make sure it looks like ``data/WillowObject/WILLOW-ObjectClass``
 
@@ -303,9 +308,9 @@ Note: All following datasets can be automatically downloaded and unzipped by `py
 
 1. IMC-PT-SparseGM
    
-    1. Download the IMC-PT-SparseGM dataset from [google drive](https://drive.google.com/file/d/1C3xl_eWaCG3lL2C3vP8Fpsck88xZOHtg/view?usp=sharing) or [baidu drive (code: g2cj)](https://pan.baidu.com/s/1ZQ3AMqoHtE_uA86GPf2h4w) or [hugging face](https://huggingface.co/datasets/esflfei/IMC-PT-SparseGM).
+    1. Download the IMC-PT-SparseGM dataset from [google drive](https://drive.google.com/file/d/1C3xl_eWaCG3lL2C3vP8Fpsck88xZOHtg/view?usp=sharing) or [baidu drive (code: g2cj)](https://pan.baidu.com/s/1ZQ3AMqoHtE_uA86GPf2h4w)
 
-    1. Unzip the dataset and make sure it looks like ``data/IMC-PT-SparseGM/annotations`` for 50 anchor points and ``data/IMC-PT-SparseGM/annotations_100`` for 100 anchor points
+    1. Unzip the dataset and make sure it looks like ``data/IMC_PT_SparseGM/annotations``
 
     Please cite the following papers if you use IMC-PT-SparseGM dataset:
     ```
@@ -387,21 +392,3 @@ We also offer the following chat rooms if you are more comfortable with them:
 * QQ Group (for Chinese users)/QQ群(中文用户): 696401889
   
   [![ThinkMatch/pygmtools交流群](http://pub.idqqimg.com/wpa/images/group.png)](https://qm.qq.com/cgi-bin/qm/qr?k=NlPuwwvaFaHzEWD8w7jSOTzoqSLIM80V&jump_from=webapi&authKey=chI2htrWDujQed6VtVid3V1NXEoJvwz3MVwruax6x5lQIvLsC8BmpmzBJOCzhtQd)
-
-## Citing ThinkMatch
-
-If you find any of the models useful in your research, please cite the corresponding papers (BibTeX citations are available for each model in the [``models/``](https://github.com/Thinklab-SJTU/ThinkMatch/tree/master/models) directory).
-
-If you like this framework, you may also cite the underlying library ``pygmtools`` which is called during training & testing:
-```
-@article{wang2024pygm,
-  author  = {Runzhong Wang and Ziao Guo and Wenzheng Pan and Jiale Ma and Yikai Zhang and Nan Yang and Qi Liu and Longxuan Wei and Hanxue Zhang and Chang Liu and Zetian Jiang and Xiaokang Yang and Junchi Yan},
-  title   = {Pygmtools: A Python Graph Matching Toolkit},
-  journal = {Journal of Machine Learning Research},
-  year    = {2024},
-  volume  = {25},
-  number  = {33},
-  pages   = {1-7},
-  url     = {https://jmlr.org/papers/v25/23-0572.html},
-}
-```
